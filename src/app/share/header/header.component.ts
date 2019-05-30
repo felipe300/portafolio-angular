@@ -8,7 +8,7 @@ import { InfoPagesService } from 'src/app/services/info-pages.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( public _servicioInfoPages: InfoPagesService ) { }
+  constructor( public servicioInfoPages: InfoPagesService ) { }
 
   ngOnInit() {
   }

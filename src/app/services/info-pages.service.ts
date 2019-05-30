@@ -18,7 +18,7 @@ export class InfoPagesService {
     this.loadTeam();
   }
 
-  private loadInfo(){
+  private loadInfo() {
     // Leer el archivo data-pages.json
     this.http.get('assets/data/data-pages.json')
     .subscribe( ( resp: InfoPages) => {
@@ -27,12 +27,11 @@ export class InfoPagesService {
     });
   }
 
-  private loadTeam(){
+  private loadTeam() {
     this.http.get('https://templatetohtml.firebaseio.com/equipo.json')
     .subscribe( ( resp: any) => {
       this.loaded = true;
       this.equipo = resp;
-      console.log(resp);
     });
   }
 }

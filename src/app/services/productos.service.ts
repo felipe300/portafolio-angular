@@ -10,7 +10,7 @@ export class ProductosService {
   loaded = true;
   products: InfoProducts[] = [];
 
-  constructor( private http: HttpClient ) { 
+  constructor( private http: HttpClient ) {
     this.loadProducts();
   }
 
@@ -20,5 +20,9 @@ export class ProductosService {
       this.products = resp;
       this.loaded = false;
     });
+  }
+
+  public getProduct( id: string ) {
+    return this.http.get(`https://templatetohtml.firebaseio.com/producto/${ id }.json`);
   }
 }
