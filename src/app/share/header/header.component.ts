@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchProducts(termino){
-    if ( termino > 1 ){
+  searchProducts(termino) {
+    if ( termino > 1 ) {
       return;
     }
     this.router.navigate(['/search', termino ]);

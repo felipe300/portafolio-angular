@@ -9,7 +9,7 @@ export class ProductosService {
 
   loaded = true;
   products: InfoProducts[] = [];
-  fillProducts: InfoProducts[]= [];
+  fillProducts: InfoProducts[] = [];
 
   constructor( private http: HttpClient ) {
     this.loadProducts();
@@ -41,14 +41,14 @@ export class ProductosService {
     }
   }
 
-  private fillterProducts( termino: string){
+  private fillterProducts( termino: string) {
     console.log(this.products);
     this.fillProducts = [];
     termino = termino.toLocaleLowerCase();
-    
+    // Lower
     this.products.forEach( prod => {
       const tituloLower = prod.titulo.toLocaleLowerCase();
-      if ( prod.categoria.indexOf(termino) >= 0 || tituloLower.indexOf(termino) >= 0 ){
+      if ( prod.categoria.indexOf(termino) >= 0 || tituloLower.indexOf(termino) >= 0 ) {
         this.fillProducts.push(prod);
       }
     });
